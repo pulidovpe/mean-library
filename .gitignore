@@ -5,9 +5,11 @@
 /dist-server
 /tmp
 /out-tsc
+/build/Release
 
-# dependencies
-/node_modules
+# Dependency directories
+node_modules/
+jspm_packages/
 
 # IDEs and editors
 /.idea
@@ -42,3 +44,11 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# credentials
+auth.js*
+server_crt.pem
+server_key.pem
+localhost.crt
+localhost.key
+package-lock.json
