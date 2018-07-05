@@ -7,3 +7,7 @@ body {
     padding: 3rem 1.5rem;
     text-align: center;
 }
+.dropdown-menu {
+  right: auto !important;
+  left: auto !important;
+}

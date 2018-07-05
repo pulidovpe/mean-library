@@ -1,13 +1,28 @@
-<app-navbar></app-navbar>
 <div class="container">
   <div class="row">
-    <div class="col-sm-2 text-center">
-      <h1>
-        Welcome to {{ title }}!
-      </h1>
-      <img width="100" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+    <div class="col-sm-12">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <img width="27" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+        <a [routerLink]="['/']" class="navbar-brand" href="#">Library</a>
+        <ul class="nav navbar-nav mr-auto">
+          <li class="nav-item">
+            <a [routerLink]="['/users']" class="nav-link disabled">Users</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/books']" class="nav-link">Books</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/borrows']" class="nav-link disabled">Borrows</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a [routerLink]="['/']" class="nav-link">Connect</a>
+            </li>
+        </ul>
+      </nav>
     </div>
-    <div class="col-sm-8">
+    <div class="row m-auto">
       <router-outlet></router-outlet>
     </div>
   </div>

@@ -8,12 +8,17 @@ import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './components/book/book.component';
-import { AppNavbarComponent } from './components/app-navbar/app-navbar.component';
+import { HomeComponent } from './components/home/home.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { BookCreateComponent } from './components/book-create/book-create.component';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
   {
     path: 'books',
     component: BookComponent,
@@ -34,17 +39,18 @@ const appRoutes: Routes = [
     component: BookEditComponent,
     data: { title: 'Edit Book' }
   },
-  { path: '',
-    redirectTo: '/books',
-    pathMatch: 'full'
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     BookComponent,
-    AppNavbarComponent,
+    PageNotFoundComponent,
     BookDetailComponent,
     BookCreateComponent,
     BookEditComponent
