@@ -25,9 +25,10 @@ async function saveUser(req,res) {
    try {
       const { nid,name,address,email } = req.body;
       const newUser = new User({ nid,name,address,email });
-      await newUser.save();
-      console.log(JSON.stringify(newUser));
-      res.status(200).send({ status: 'User saved' });
+      const saved = await newUser.save();
+      res.json(saved);
+      /*console.log(JSON.stringify(newUser));
+      res.status(200).send({ status: 'User saved' });*/
    } catch(err) {
       res.sendStatus(err.status || 404);
       console.log(`err: ${err.status} - message: ${err.message}`);
@@ -37,11 +38,12 @@ async function saveUser(req,res) {
 async function updateUser(req,res) {
    try {
       const id = req.params.id;
-      const { nid,name,address,email,book } = req.body;
+      const { _id,nid,name,address,email,book } = req.body;
       const updUser = { nid,name,address,email,book };
-      await User.findByIdAndUpdate(id, updUser);
-      console.log(JSON.stringify(updUser));
-      res.status(200).send({ status: 'User updated' });
+      await User.findByIdAndUpdate(_id, updUser);
+      res.status(200).json(updated);
+      /*console.log(JSON.stringify(updUser));
+      res.status(200).send({ status: 'User updated' });*/
    } catch(err) {
       res.sendStatus(err.status || 404);
       console.log(`err: ${err.status} - message: ${err.message}`);

@@ -1,27 +1,51 @@
-# MeanLibrary
-
+# Mean Library
+> Es una API Rest desarrollada en Node y consumida con Angular 5
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
+## Screenshots / Capturas de Pantalla
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Tech-framework used / Tecnologías Usadas
+- Angular 5.2.0
+  - Angular CLI 1.7.4
+- Node 8.11.3
+  - express 4.16.3
+  - mongoose 5.1.7
+  - nodemon 1.17.3
+- Mongodb 3.2.11
+- Bootstrap 4.1.0
+- ngx-bootstrap 3.0.0
 
-## Code scaffolding
+## Install / Instalación
+#### OS X, Linux y Windows
+*Abra un terminal y ejecute:*
+```Shell
+git clone http://github.com/pulidovpe/mean-library.git
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+cd mean-library
 
-## Build
+npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+npm start
+```
+## Tasks / Lista de Tareas
+- [x] Inicializar repositorio
+- [x] Subir mis primeros cambios a GitHub
+- [x] Completar el back-end
+- [x] Probar el API
+- [ ] Completar el front-end
 
-## Running unit tests
+## Contribute / Para contribuir
+1. Has un [Fork](https://github.com/pulidovpe/mean-library/fork)
+2. Crea tu propia rama (git checkout -b feature/fooBar)
+3. Sube tus cambios (git commit -am 'Add some fooBar')
+4. Actualiza tu rama (git push origin feature/fooBar)
+5. Has un "Pull Request"
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Credits / Créditos
+En este proyecto, me he guiado del tutorial publicado en esta página:
+[Didin J](https://www.djamware.com/post/5a0673c880aca7739224ee21/mean-stack-angular-5-crud-web-application-example), propiedad del usuario @github/didinj
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License / Licencia
+Pulido V.P.E. – @github/pulidovpe – pulidovpe.dev@gmail.com
+Distributed under the MIT license. See [LICENSE](LICENSE) for more information.

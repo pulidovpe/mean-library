@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>{{ book.title }}</h1>
+  <dl class="list">
+    <dt>Author</dt>
+    <dd>{{ book.author }}</dd>
+    <dt>Language</dt>
+    <dd>{{ book.language }}</dd>
+    <dt>Editorial</dt>
+    <dd>{{ book.editorial }}</dd>
+    <dt>State</dt>
+    <dd>{{ book.state }}</dd>
+  </dl>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/book-edit', book._id]" class="btn btn-success">EDIT</a>
+    <button class="btn btn-danger" type="button" (click)="deleteBook(book._id)">DELETE</button>
+    <a [routerLink]="['/books']" class="btn btn-warning">CANCEL</a>
+  </div>
+</div>
