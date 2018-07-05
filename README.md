@@ -1,9 +1,10 @@
 # Mean Library
 > Es una API Rest desarrollada en Node y consumida con Angular 5
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Screenshots / Capturas de Pantalla
-## Development server
+
 
 ## Tech-framework used / Tecnologías Usadas
 - Angular 5.2.0
