@@ -20,8 +20,8 @@ const user_schema = new Schema({
   address: {
     type: String,
     required: true
-   },
-   email: {
+  },
+  email: {
     type: String,
     required: true,
     unique: true,

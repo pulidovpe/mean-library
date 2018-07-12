@@ -13,6 +13,10 @@ import { BookDetailComponent } from './components/book-detail/book-detail.compon
 import { BookCreateComponent } from './components/book-create/book-create.component';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { UserComponent } from './components/user/user.component';
+import { UserCreateComponent } from './components/user-create/user-create.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 const appRoutes: Routes = [
   {
@@ -40,6 +44,11 @@ const appRoutes: Routes = [
     data: { title: 'Edit Book' }
   },
   {
+    path: 'users',
+    component: UserComponent,
+    data: { title: 'User List' }
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
@@ -53,7 +62,11 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     BookDetailComponent,
     BookCreateComponent,
-    BookEditComponent
+    BookEditComponent,
+    UserComponent,
+    UserCreateComponent,
+    UserDetailComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
