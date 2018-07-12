@@ -1,3 +1,22 @@
-<p>
-  user-detail works!
-</p>
+<div class="row">
+  <h1>{{ user.title }}</h1>
+    <div class="col-md-10">
+      <dl class="list">
+        <dt>NID</dt>
+        <dd>{{ user.nid }}</dd>
+        <dt>Name</dt>
+        <dd>{{ user.name }}</dd>
+        <dt>E-mail</dt>
+        <dd>{{ user.email }}</dd>
+        <dt>Address</dt>
+        <dd>{{ user.address }}</dd>
+      </dl>
+    </div>
+</div>
+<div class="row">
+  <div class="col-md-10">
+    <a [routerLink]="['/user-edit', user._id]" class="btn btn-success">EDIT</a>
+    <button class="btn btn-danger" type="button" (click)="deleteuser(user._id)">DELETE</button>
+    <a [routerLink]="['/users']" class="btn btn-warning">CANCEL</a>
+  </div>
+</div>

@@ -17,16 +17,17 @@ const user_schema = new Schema({
     maxlength: [30,"Too big"],
     minlength: [6,"Too small"]
   },
-  address: {
-    type: String,
-    required: true
-  },
   email: {
     type: String,
     required: true,
     unique: true,
     match: email_match
+  },
+  address: {
+    type: String,
+    required: true
   }
+
 });
 
 var User = mongoose.model("User",user_schema);

@@ -18,7 +18,7 @@
         <td>{{ user.nid }}</td>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
-        <td><a [routerLink]="['/user-details', user._id]">Show Detail</a></td>
+        <td><a [routerLink]="['/user-details', user.nid]">Show Detail</a></td>
       </tr>
     </tbody>
   </table>

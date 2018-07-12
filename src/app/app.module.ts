@@ -49,6 +49,11 @@ const appRoutes: Routes = [
     data: { title: 'User List' }
   },
   {
+    path: 'user-details/:id',
+    component: UserDetailComponent,
+    data: { title: 'User Details' }
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
