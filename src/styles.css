@@ -1,13 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
 
 body {
-   padding-top: 80px;
+  padding-top: 80px;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+  url(./assets/library.jpg);
+  background-size: cover;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .starter-template {
-    padding: 3rem 1.5rem;
-    text-align: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
 }
 .dropdown-menu {
   right: auto !important;
   left: auto !important;
+}
+
+h1,h2,td,th,dt,dd,label,span,p {
+  color: white;
+  /*text-align: center;*/
 }
