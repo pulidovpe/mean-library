@@ -11,6 +11,17 @@ import { HttpClient } from '@angular/common/http';
 export class BookCreateComponent implements OnInit {
 
   book = {};
+  languages = [
+    { language: "english", name: "Inglés" },
+    { language: "spanish", name: "Español" },
+    { language: "french", name: "Francés" },
+    { language: "italian", name: "Italiano" }
+  ];
+  states = [
+    { state: "active", name: "Activo" },
+    { state: "inactive", name: "Inactivo" }
+  ];
+  selectedValue = null;
 
   constructor(private http: HttpClient, private router: Router) { }
 

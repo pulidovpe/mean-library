@@ -24,13 +24,15 @@ export class BookDetailComponent implements OnInit {
   }
 
   deleteBook(id) {
-    this.http.delete('/api/book/'+id)
+    if(window.confirm("Are you sure to delete?")) {
+      this.http.delete('/api/book/'+id)
       .subscribe(res => {
           this.router.navigate(['/books']);
         }, (err) => {
           console.log(err);
         }
       );
+    }
   }
 
 }

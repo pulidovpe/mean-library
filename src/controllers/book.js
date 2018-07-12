@@ -27,8 +27,6 @@ async function saveBook(req,res) {
       const newBook = new Book({ title,author,editorial,language,state });
       const saved = await newBook.save();
       res.json(saved);
-      /*console.log(JSON.stringify(newBook));
-      res.sendStatus(200).send({ status: 'Book saved' });*/
    } catch(err) {
       res.sendStatus(err.status || 404);
       console.log(`err: ${err.status} - message: ${err.message}`);
@@ -42,8 +40,6 @@ async function updateBook(req,res) {
       const updBook = { title,author,editorial,language,state };
       const updated = await Book.findByIdAndUpdate(id, updBook);
       res.status(200).json(updated);
-      /*console.log(JSON.stringify(updBook));
-      res.sendStatus(200).send({ status: 'Book updated' });*/
    } catch(err) {
       res.sendStatus(err.status || 404);
       console.log(`err: ${err.status} - message: ${err.message}`);

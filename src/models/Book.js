@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const state_opt = ["active","inactive"];
-const lang_opt = ["english","spanish","french"];
+const lang_opt = ["english","spanish","french","italian"];
 
 const book_schema = new Schema({
    title: {
