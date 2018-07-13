@@ -1,6 +1,6 @@
-<div class="row">
-  <h1 class="text-light">Edit Book</h1>
-  <div class="col-md-10">
+<div class="d-flex justify-content-center">
+  <div class="col-md-8 justify-content-start">
+    <h1 class="text-light">Edit Book</h1>
     <form (ngSubmit)="updateBook(book._id)" #bookForm="ngForm" role="form">
       <div class="form-group">
         <label for="name">Title</label>
@@ -28,11 +28,9 @@
           <option *ngFor="let st of states" [value]="st.state">{{st.name}}</option>
         </select>
       </div>
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Update</button>
-          <a [routerLink]="['/books']" class="btn btn-warning">CANCEL</a>
-        </div>
+      <div class="justify-content-center">
+        <button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Update</button>
+        <a [routerLink]="['/books']" class="btn btn-warning">CANCEL</a>
       </div>
     </form>
   </div>

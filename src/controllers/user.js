@@ -23,12 +23,10 @@ async function getUser(req,res) {
 
 async function saveUser(req,res) {
    try {
-      const { nid,name,address,email } = req.body;
-      const newUser = new User({ nid,name,address,email });
+      const { nid,name,email,address } = req.body;
+      const newUser = new User({ nid,name,email,address });
       const saved = await newUser.save();
       res.json(saved);
-      /*console.log(JSON.stringify(newUser));
-      res.status(200).send({ status: 'User saved' });*/
    } catch(err) {
       res.sendStatus(err.status || 404);
       console.log(`err: ${err.status} - message: ${err.message}`);
@@ -37,13 +35,11 @@ async function saveUser(req,res) {
 
 async function updateUser(req,res) {
    try {
-      const id = req.params.id;
-      const { _id,nid,name,address,email,book } = req.body;
-      const updUser = { nid,name,address,email,book };
-      await User.findByIdAndUpdate(_id, updUser);
+      const _id = req.params.id;
+      const { nid,name,email,address } = req.body;
+      const updUser = { nid,name,email,address };
+      const updated = await User.findByIdAndUpdate(_id, updUser);
       res.status(200).json(updated);
-      /*console.log(JSON.stringify(updUser));
-      res.status(200).send({ status: 'User updated' });*/
    } catch(err) {
       res.sendStatus(err.status || 404);
       console.log(`err: ${err.status} - message: ${err.message}`);

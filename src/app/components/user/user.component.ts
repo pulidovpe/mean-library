@@ -10,13 +10,13 @@ import { HttpClient } from '@angular/common/http';
 export class UserComponent implements OnInit {
   users: any;
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-    ngOnInit() {
-      this.http.get('/api/user').subscribe(data => {
-        console.log(data);
-        this.users = data;
-      });
-    }
+  ngOnInit() {
+    this.http.get('/api/user').subscribe(data => {
+      console.log(data);
+      this.users = data;
+    });
+  }
 
 }

@@ -54,6 +54,16 @@ const appRoutes: Routes = [
     data: { title: 'User Details' }
   },
   {
+    path: 'user-create',
+    component: UserCreateComponent,
+    data: { title: 'Create User' }
+  },
+  {
+    path: 'user-edit/:id',
+    component: UserEditComponent,
+    data: { title: 'Edit User' }
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
@@ -63,14 +73,14 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    BookComponent,
     PageNotFoundComponent,
+    BookComponent,
     BookDetailComponent,
     BookCreateComponent,
     BookEditComponent,
     UserComponent,
-    UserCreateComponent,
     UserDetailComponent,
+    UserCreateComponent,
     UserEditComponent
   ],
   imports: [
