@@ -9,7 +9,7 @@ const user = mongoose.model('User');
 const state_opt = ["current","expired"];
 
 const borrow_schema = new Schema({
-   user_id: {
+  user_id: {
     type: Schema.ObjectId,
     ref: "user",
     default: null

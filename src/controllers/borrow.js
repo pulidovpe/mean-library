@@ -7,8 +7,11 @@ async function getBorrows(req,res) {
          {path: 'user_id', model: 'User'},
          {path: 'book_id', model: 'Book'}
       ]).exec((err, brws) => {
-         if(err || brws === undefined) res.status(404).send({ error: 'Something failed. Not found!' });
-         else res.json(brws);
+        if(err || brws === undefined) res.status(404).send({ error: 'Something failed. Not found!' });
+        else {
+          res.json(brws);
+          console.log('Mostramos los datos: ' + brws);
+        }
       });
    } catch(err) {
       res.sendStatus(err.status || 404);

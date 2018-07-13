@@ -17,6 +17,7 @@ import { UserComponent } from './components/user/user.component';
 import { UserCreateComponent } from './components/user-create/user-create.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { BorrowComponent } from './components/borrow/borrow.component';
 
 const appRoutes: Routes = [
   {
@@ -64,6 +65,11 @@ const appRoutes: Routes = [
     data: { title: 'Edit User' }
   },
   {
+    path: 'borrows',
+    component: BorrowComponent,
+    data: { title: 'Borrow List' }
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
@@ -81,7 +87,8 @@ const appRoutes: Routes = [
     UserComponent,
     UserDetailComponent,
     UserCreateComponent,
-    UserEditComponent
+    UserEditComponent,
+    BorrowComponent
   ],
   imports: [
     BrowserModule,

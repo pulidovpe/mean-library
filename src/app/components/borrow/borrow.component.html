@@ -1,0 +1,25 @@
+<div class="row">
+  <h1 class="text-light">Borrow List
+    <a [routerLink]="['/borrow-create']" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true">+</span>
+    </a>
+  </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Book</th>
+        <th>Date Borrowed</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let borrow of borrows">
+        <td>{{ borrow.user_id.name }}</td>
+        <td>{{ borrow.book_id.title }}</td>
+        <td>{{ borrow.date_borrowed }}</td>
+        <td><a [routerLink]="['/borrow-details', borrow._id]">Show Detail</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
