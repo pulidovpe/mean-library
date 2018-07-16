@@ -1,5 +1,14 @@
 # Mean Library
-> Es una API Rest desarrollada en Node y consumida con Angular 5
+> Es una aplicacion desarrollada en Node y Express; que usa una base de datos en
+Mongodb (API Rest) y es consumida con Angular 5.
+> Consta de un sistema que simula el comportamiento de una biblioteca, donde se
+cumpla con los siguientes requerimientos funciones y de calidad:
+- Gestión de usuarios: Se almacena el nombre, su dni, su dirección y correo.
+- Gestión de libros: Se debe almacenar la información del libro como son,
+identificador, titulo, idioma, nombre editorial y estado. También se debe permitir la modificación del libro y cambiar de estado al mismo.
+- Gestión de préstamos: El sistema debe tener la opción de realizar préstamos, y
+se debe guardar la información del libro prestado y el nombre del usuario junto
+con la fecha y días a prestar.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
