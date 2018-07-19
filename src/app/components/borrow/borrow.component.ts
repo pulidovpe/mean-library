@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BorrowComponent implements OnInit {
   borrows: any;
+  stateFlag = 'black';
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +17,21 @@ export class BorrowComponent implements OnInit {
     this.http.get('/api/borrow').subscribe(data => {
       this.borrows = data;
     });
+  }
+
+  date_due(day) {
+    let str_day = day.toString();
+    let start_day = new Date(str_day).getTime();
+    let end_day   = new Date().getTime();
+    let diff = end_day - start_day;
+    diff = Math.round( diff/(1000*60*60*24) );
+    /*let diff2 = Number(diff);*/
+    return diff;
+  }
+
+  calculateStyles(days) {
+    if(parseInt(days) > 3) this.stateFlag = 'red';
+    return { 'background-color': this.stateFlag };
   }
 
 }

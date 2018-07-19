@@ -1,0 +1,28 @@
+<h1 class="text-light text-center">{{ borrow.book_id.title }}</h1>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-4 justify-content-start">
+      <dl class="list">
+        <dt class="align-content-center bg-dark">Book</dt>
+        <dt>Author</dt>
+        <dd>{{ borrow.book_id.author }}</dd>
+        <dt>Language</dt>
+        <dd>{{ borrow.book_id.language }}</dd>
+        <dt>Editorial</dt>
+        <dd>{{ borrow.book_id.editorial }}</dd>
+      </dl>
+    </div>
+    <div class="col-md-4 justify-content-start">
+      <dl class="list">
+        <dt class="align-content-center bg-dark">User</dt>
+        <dt>NID</dt>
+        <dd>{{ borrow.user_id.nid }}</dd>
+        <dt>Name</dt>
+        <dd>{{ borrow.user_id.name }}</dd>
+      </dl>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+  <a [routerLink]="['/borrow-edit', borrow._id]" class="btn btn-success">RETURN</a>
+  <a [routerLink]="['/borrows']" class="btn btn-warning">CANCEL</a>
+</div>

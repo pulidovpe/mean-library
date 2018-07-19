@@ -17,7 +17,7 @@
       <tr *ngFor="let borrow of borrows">
         <td>{{ borrow.user_id.name }}</td>
         <td>{{ borrow.book_id.title }}</td>
-        <td>{{ borrow.date_borrowed }}</td>
+        <td [ngStyle]="calculateStyles(date_due(borrow.date_borrowed))">{{ date_due(borrow.date_borrowed) }} Days Borrowed</td>
         <td><a [routerLink]="['/borrow-details', borrow._id]">Show Detail</a></td>
       </tr>
     </tbody>

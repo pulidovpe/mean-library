@@ -17,7 +17,7 @@
       <tr *ngFor="let book of books">
         <td>{{ book.title }}</td>
         <td>{{ book.author }}</td>
-        <td>{{ book.state }}</td>
+        <td [ngStyle]="calculateStyles(book.state)">{{ book.state }}</td>
         <td><a [routerLink]="['/book-details', book._id]">Show Detail</a></td>
       </tr>
     </tbody>

@@ -18,6 +18,9 @@ import { UserCreateComponent } from './components/user-create/user-create.compon
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { BorrowComponent } from './components/borrow/borrow.component';
+import { BorrowCreateComponent } from './components/borrow-create/borrow-create.component';
+import { BorrowDetailComponent } from './components/borrow-detail/borrow-detail.component';
+import { BorrowEditComponent } from './components/borrow-edit/borrow-edit.component';
 
 const appRoutes: Routes = [
   {
@@ -70,6 +73,11 @@ const appRoutes: Routes = [
     data: { title: 'Borrow List' }
   },
   {
+    path: 'borrow-details/:id',
+    component: BorrowDetailComponent,
+    data: { title: 'Borrow Details' }
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
@@ -88,7 +96,10 @@ const appRoutes: Routes = [
     UserDetailComponent,
     UserCreateComponent,
     UserEditComponent,
-    BorrowComponent
+    BorrowComponent,
+    BorrowCreateComponent,
+    BorrowDetailComponent,
+    BorrowEditComponent
   ],
   imports: [
     BrowserModule,

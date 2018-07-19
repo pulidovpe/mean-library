@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
   encapsulation: ViewEncapsulation.None
 })
 export class BookCreateComponent implements OnInit {
-
   book = {};
   languages = [
     { language: "english", name: "Inglés" },
