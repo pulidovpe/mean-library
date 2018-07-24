@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BookComponent implements OnInit {
   books: any;
-  stateFlag = 'black';
+  stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
 
   constructor(private http: HttpClient) { }
 
@@ -20,8 +20,8 @@ export class BookComponent implements OnInit {
     });
   }
 
-  calculateStyles(str2) {
-    if(str2 === 'inactive') this.stateFlag = 'yellow';
+  calculateStyles(state) {
+    if(state === 'inactive') this.stateFlag = 'yellow';
     else this.stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
     return { 'background': this.stateFlag };
   }

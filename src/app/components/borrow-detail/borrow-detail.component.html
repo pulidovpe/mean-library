@@ -1,4 +1,7 @@
 <h1 class="text-light text-center">{{ borrow.book_id.title }}</h1>
+<!-- <p>
+  ID {{ borrow._id }} - Book ID {{ borrow.book_id._id}}
+</p> -->
 <hr />
 <div class="row justify-content-center">
     <div class="col-md-4 justify-content-start">
@@ -23,6 +26,6 @@
     </div>
 </div>
 <div class="d-flex justify-content-center">
-  <a [routerLink]="['/borrow-edit', borrow._id]" class="btn btn-success">RETURN</a>
+  <button class="btn btn-success" type="button" (click)="returnBorrow(borrow._id, borrow.book_id._id)">RETURN</button>
   <a [routerLink]="['/borrows']" class="btn btn-warning">CANCEL</a>
 </div>

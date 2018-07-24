@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BorrowComponent implements OnInit {
   borrows: any;
-  stateFlag = 'black';
+  stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
 
   constructor(private http: HttpClient) { }
 
@@ -25,13 +25,13 @@ export class BorrowComponent implements OnInit {
     let end_day   = new Date().getTime();
     let diff = end_day - start_day;
     diff = Math.round( diff/(1000*60*60*24) );
-    /*let diff2 = Number(diff);*/
     return diff;
   }
 
   calculateStyles(days) {
     if(parseInt(days) > 3) this.stateFlag = 'red';
-    return { 'background-color': this.stateFlag };
+    else this.stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
+    return { 'background': this.stateFlag };
   }
 
 }

@@ -9,9 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class BorrowDetailComponent implements OnInit {
-  borrow = {};
+  borrow: any = {};
 
-  constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getBorrowDetail(this.route.snapshot.params['id']);
@@ -23,12 +23,12 @@ export class BorrowDetailComponent implements OnInit {
     });
   }
 
-  /* standing by... */
-  deleteBorrow(id) {
-    if(window.confirm("Are you sure to delete?")) {
-      this.http.delete('/api/borrow/'+id)
+  returnBorrow(id1,id2) {
+    if(window.confirm("The book has been returned?")) {
+      this.http.put('/api/borrow/'+id1+'/'+id2, this.borrow)
       .subscribe(res => {
           this.router.navigate(['/borrows']);
+          alert("Already done!");
         }, (err) => {
           console.log(err);
         }
