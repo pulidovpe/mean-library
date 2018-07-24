@@ -13,7 +13,9 @@ con la fecha y días a prestar.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Screenshots / Capturas de Pantalla
-
+![enter image description here](https://lh3.googleusercontent.com/dc51qxVBZAhcl2OowTiIv9G3tw6GvTuTMZhxGSrfUy0znlizFCLS9O0YCrpxLGM78YsW9MMgrLiN=s750 "Welcome to Library")
+![Add new user](https://lh3.googleusercontent.com/jGFCr8ImI9fPDiGuf9qtsvPEJKxNq92kvx4qgzafiO0XCUoO5TQB0pe6ytn4lDTUMuuaEJR8IQz7=s750 "Add new user")
+![Book list](https://lh3.googleusercontent.com/imUsW-viwlBM3DJmQ4BYbNEPFF1GtwBEriTlwQVgul_IZIZXqq3wNKQisHJshOJQqVHxrXLF6Eqp=s750 "Book list")
 
 ## Tech-framework used / Tecnologías Usadas
 - Angular 5.2.0
