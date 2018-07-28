@@ -11,6 +11,20 @@ export class BookComponent implements OnInit {
   books: any;
   stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
 
+  public filter: string = '';
+  public maxSize: number = 7;
+  public directionLinks: boolean = true;
+  public autoHide: boolean = false;
+  public config: any = {
+      id: 'advanced',
+      itemsPerPage: 5,
+      currentPage: 1
+  };
+  public labels: any = {
+      previousLabel: 'Previous',
+      nextLabel: 'Next'
+  };
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -24,6 +38,11 @@ export class BookComponent implements OnInit {
     if(state === 'inactive') this.stateFlag = 'yellow';
     else this.stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
     return { 'background': this.stateFlag };
+  }
+
+  onPageChange(number: number) {
+    console.log('change to page', number);
+    this.config.currentPage = number;
   }
 
 }

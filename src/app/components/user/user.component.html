@@ -1,9 +1,9 @@
-<div class="row">
-  <h1 class="text-light">User List</h1>
+<div style="height: 28rem !important">
+  <h1 class="text-light">User List
     <a [routerLink]="['/user-create']" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-plus" aria-hidden="true">+</span>
+      <span  class="btn font-weight-bold" style="font-size: 2em" aria-hidden="true">+</span>
     </a>
-
+  </h1>
   <table class="table">
     <thead>
       <tr>
@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users">
+      <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }">
         <td>{{ user.nid }}</td>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
@@ -23,3 +23,6 @@
     </tbody>
   </table>
 </div>
+<pagination-controls
+  (pageChange)="p = $event">
+</pagination-controls>

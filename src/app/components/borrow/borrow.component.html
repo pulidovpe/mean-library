@@ -1,7 +1,7 @@
-<div class="row">
+<div style="height: 28rem !important">
   <h1 class="text-light">Borrow List
     <a [routerLink]="['/borrow-create']" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-plus" aria-hidden="true">+</span>
+      <span class="btn font-weight-bold" style="font-size: 2em" aria-hidden="true">+</span>
     </a>
   </h1>
   <table class="table">
@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let borrow of borrows">
+      <tr *ngFor="let borrow of borrows | paginate: { itemsPerPage: 5, currentPage: p }">
         <td>{{ borrow.user_id.name }}</td>
         <td>{{ borrow.book_id.title }}</td>
         <td [ngStyle]="calculateStyles(date_due(borrow.date_borrowed))">{{ date_due(borrow.date_borrowed) }} Days Borrowed</td>
@@ -23,3 +23,6 @@
     </tbody>
   </table>
 </div>
+<pagination-controls
+  (pageChange)="p = $event">
+</pagination-controls>

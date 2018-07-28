@@ -1,9 +1,12 @@
-<div class="row">
+<div style="height: 28rem !important">
   <h1 class="text-light">Book List
     <a [routerLink]="['/book-create']" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-plus" aria-hidden="true">+</span>
+      <span  class="btn font-weight-bold" style="font-size: 2em" aria-hidden="true">+</span>
     </a>
   </h1>
+  <label class="offset-md-9">Filter books
+    <input type="text" class="input" placeholder="Search..." [(ngModel)]="filter">
+  </label>
   <table class="table">
     <thead>
       <tr>
@@ -13,8 +16,8 @@
         <th>Action</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let book of books">
+    <tbody class="m-auto">
+      <tr *ngFor="let book of books | stringFilter: filter | paginate: config">
         <td>{{ book.title }}</td>
         <td>{{ book.author }}</td>
         <td [ngStyle]="calculateStyles(book.state)">{{ book.state }}</td>
@@ -23,3 +26,12 @@
     </tbody>
   </table>
 </div>
+<pagination-controls
+  [id]="config.id"
+  [maxSize]="maxSize"
+  [directionLinks]="directionLinks"
+  [autoHide]="autoHide"
+  [previousLabel]="labels.previousLabel"
+  [nextLabel]="labels.nextLabel"
+  (pageChange)="onPageChange($event)">
+</pagination-controls>

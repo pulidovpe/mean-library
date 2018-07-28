@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
 /*import { AlertModule } from 'ngx-bootstrap';*/
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './components/book/book.component';
@@ -21,6 +22,7 @@ import { BorrowComponent } from './components/borrow/borrow.component';
 import { BorrowCreateComponent } from './components/borrow-create/borrow-create.component';
 import { BorrowDetailComponent } from './components/borrow-detail/borrow-detail.component';
 import { BorrowEditComponent } from './components/borrow-edit/borrow-edit.component';
+import { StringFilterPipe } from './string-filter-pipe';
 
 const appRoutes: Routes = [
   {
@@ -99,12 +101,14 @@ const appRoutes: Routes = [
     BorrowComponent,
     BorrowCreateComponent,
     BorrowDetailComponent,
-    BorrowEditComponent
+    BorrowEditComponent,
+    StringFilterPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule,
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,

@@ -10,6 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class UserComponent implements OnInit {
   users: any;
 
+  page: number = 1;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {

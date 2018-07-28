@@ -11,6 +11,8 @@ export class BorrowComponent implements OnInit {
   borrows: any;
   stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
 
+  page: number = 1;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {

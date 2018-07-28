@@ -27,7 +27,7 @@ module.exports = "\n"
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n      <nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n        <img width=\"27\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n        <a [routerLink]=\"['/']\" class=\"navbar-brand\" href=\"#\">Library</a>\n        <ul class=\"nav navbar-nav mr-auto\">\n          <li class=\"nav-item\">\n            <a [routerLink]=\"['/users']\" class=\"nav-link\">Users</a>\n          </li>\n          <li class=\"nav-item\">\n            <a [routerLink]=\"['/books']\" class=\"nav-link\">Books</a>\n          </li>\n          <li class=\"nav-item\">\n            <a [routerLink]=\"['/borrows']\" class=\"nav-link\">Borrows</a>\n          </li>\n        </ul>\n        <ul class=\"nav navbar-nav\">\n            <li class=\"nav-item\">\n                <a [routerLink]=\"['/']\" class=\"nav-link\">Connect</a>\n            </li>\n        </ul>\n      </nav>\n    </div>\n    <div class=\"container-fluid m-auto\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n      <nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n        <img width=\"27\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n        <a [routerLink]=\"['/']\" class=\"navbar-brand\" href=\"#\">Library</a>\n        <ul class=\"nav navbar-nav mr-auto\">\n          <li class=\"nav-item\">\n            <a [routerLink]=\"['/users']\" class=\"nav-link\">Users</a>\n          </li>\n          <li class=\"nav-item\">\n            <a [routerLink]=\"['/books']\" class=\"nav-link\">Books</a>\n          </li>\n          <li class=\"nav-item\">\n            <a [routerLink]=\"['/borrows']\" class=\"nav-link\">Borrows</a>\n          </li>\n        </ul>\n        <ul class=\"nav navbar-nav\">\n            <li class=\"nav-item\">\n                <a [routerLink]=\"['/']\" class=\"nav-link\">Connect</a>\n            </li>\n        </ul>\n      </nav>\n    </div>\n    <div class=\"container-fluid align-items-start\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -73,21 +73,23 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_dropdown__ = __webpack_require__("./node_modules/ngx-bootstrap/dropdown/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_book_book_component__ = __webpack_require__("./src/app/components/book/book.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__ = __webpack_require__("./src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_book_detail_book_detail_component__ = __webpack_require__("./src/app/components/book-detail/book-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_book_create_book_create_component__ = __webpack_require__("./src/app/components/book-create/book-create.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_book_edit_book_edit_component__ = __webpack_require__("./src/app/components/book-edit/book-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_page_not_found_page_not_found_component__ = __webpack_require__("./src/app/components/page-not-found/page-not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_user_user_component__ = __webpack_require__("./src/app/components/user/user.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_user_create_user_create_component__ = __webpack_require__("./src/app/components/user-create/user-create.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_user_detail_user_detail_component__ = __webpack_require__("./src/app/components/user-detail/user-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_user_edit_user_edit_component__ = __webpack_require__("./src/app/components/user-edit/user-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_borrow_borrow_component__ = __webpack_require__("./src/app/components/borrow/borrow.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_borrow_create_borrow_create_component__ = __webpack_require__("./src/app/components/borrow-create/borrow-create.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_borrow_detail_borrow_detail_component__ = __webpack_require__("./src/app/components/borrow-detail/borrow-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_borrow_edit_borrow_edit_component__ = __webpack_require__("./src/app/components/borrow-edit/borrow-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ngx_pagination__ = __webpack_require__("./node_modules/ngx-pagination/dist/ngx-pagination.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_book_book_component__ = __webpack_require__("./src/app/components/book/book.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("./src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_book_detail_book_detail_component__ = __webpack_require__("./src/app/components/book-detail/book-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_book_create_book_create_component__ = __webpack_require__("./src/app/components/book-create/book-create.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_book_edit_book_edit_component__ = __webpack_require__("./src/app/components/book-edit/book-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_page_not_found_page_not_found_component__ = __webpack_require__("./src/app/components/page-not-found/page-not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_user_user_component__ = __webpack_require__("./src/app/components/user/user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_user_create_user_create_component__ = __webpack_require__("./src/app/components/user-create/user-create.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_user_detail_user_detail_component__ = __webpack_require__("./src/app/components/user-detail/user-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_user_edit_user_edit_component__ = __webpack_require__("./src/app/components/user-edit/user-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_borrow_borrow_component__ = __webpack_require__("./src/app/components/borrow/borrow.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_borrow_create_borrow_create_component__ = __webpack_require__("./src/app/components/borrow-create/borrow-create.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_borrow_detail_borrow_detail_component__ = __webpack_require__("./src/app/components/borrow-detail/borrow-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_borrow_edit_borrow_edit_component__ = __webpack_require__("./src/app/components/borrow-edit/borrow-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__string_filter_pipe__ = __webpack_require__("./src/app/string-filter-pipe.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -116,64 +118,66 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var appRoutes = [
     {
         path: '',
-        component: __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */]
     },
     {
         path: 'books',
-        component: __WEBPACK_IMPORTED_MODULE_7__components_book_book_component__["a" /* BookComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_8__components_book_book_component__["a" /* BookComponent */],
         data: { title: 'Book List' }
     },
     {
         path: 'book-details/:id',
-        component: __WEBPACK_IMPORTED_MODULE_9__components_book_detail_book_detail_component__["a" /* BookDetailComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_10__components_book_detail_book_detail_component__["a" /* BookDetailComponent */],
         data: { title: 'Book Details' }
     },
     {
         path: 'book-create',
-        component: __WEBPACK_IMPORTED_MODULE_10__components_book_create_book_create_component__["a" /* BookCreateComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_11__components_book_create_book_create_component__["a" /* BookCreateComponent */],
         data: { title: 'Create Book' }
     },
     {
         path: 'book-edit/:id',
-        component: __WEBPACK_IMPORTED_MODULE_11__components_book_edit_book_edit_component__["a" /* BookEditComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_12__components_book_edit_book_edit_component__["a" /* BookEditComponent */],
         data: { title: 'Edit Book' }
     },
     {
         path: 'users',
-        component: __WEBPACK_IMPORTED_MODULE_13__components_user_user_component__["a" /* UserComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_14__components_user_user_component__["a" /* UserComponent */],
         data: { title: 'User List' }
     },
     {
         path: 'user-details/:id',
-        component: __WEBPACK_IMPORTED_MODULE_15__components_user_detail_user_detail_component__["a" /* UserDetailComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_16__components_user_detail_user_detail_component__["a" /* UserDetailComponent */],
         data: { title: 'User Details' }
     },
     {
         path: 'user-create',
-        component: __WEBPACK_IMPORTED_MODULE_14__components_user_create_user_create_component__["a" /* UserCreateComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_15__components_user_create_user_create_component__["a" /* UserCreateComponent */],
         data: { title: 'Create User' }
     },
     {
         path: 'user-edit/:id',
-        component: __WEBPACK_IMPORTED_MODULE_16__components_user_edit_user_edit_component__["a" /* UserEditComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_17__components_user_edit_user_edit_component__["a" /* UserEditComponent */],
         data: { title: 'Edit User' }
     },
     {
         path: 'borrows',
-        component: __WEBPACK_IMPORTED_MODULE_17__components_borrow_borrow_component__["a" /* BorrowComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_18__components_borrow_borrow_component__["a" /* BorrowComponent */],
         data: { title: 'Borrow List' }
     },
     {
         path: 'borrow-details/:id',
-        component: __WEBPACK_IMPORTED_MODULE_19__components_borrow_detail_borrow_detail_component__["a" /* BorrowDetailComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_20__components_borrow_detail_borrow_detail_component__["a" /* BorrowDetailComponent */],
         data: { title: 'Borrow Details' }
     },
     {
         path: '**',
-        component: __WEBPACK_IMPORTED_MODULE_12__components_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_13__components_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
     }
 ];
 var AppModule = /** @class */ (function () {
@@ -182,33 +186,35 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__components_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_book_book_component__["a" /* BookComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__components_book_detail_book_detail_component__["a" /* BookDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__components_book_create_book_create_component__["a" /* BookCreateComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_book_edit_book_edit_component__["a" /* BookEditComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__components_user_user_component__["a" /* UserComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__components_user_detail_user_detail_component__["a" /* UserDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__components_user_create_user_create_component__["a" /* UserCreateComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__components_user_edit_user_edit_component__["a" /* UserEditComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__components_borrow_borrow_component__["a" /* BorrowComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__components_borrow_create_borrow_create_component__["a" /* BorrowCreateComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__components_borrow_detail_borrow_detail_component__["a" /* BorrowDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__components_borrow_edit_borrow_edit_component__["a" /* BorrowEditComponent */]
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__components_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__components_book_book_component__["a" /* BookComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__components_book_detail_book_detail_component__["a" /* BookDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__components_book_create_book_create_component__["a" /* BookCreateComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__components_book_edit_book_edit_component__["a" /* BookEditComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__components_user_user_component__["a" /* UserComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__components_user_detail_user_detail_component__["a" /* UserDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__components_user_create_user_create_component__["a" /* UserCreateComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__components_user_edit_user_edit_component__["a" /* UserEditComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__components_borrow_borrow_component__["a" /* BorrowComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__components_borrow_create_borrow_create_component__["a" /* BorrowCreateComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__components_borrow_detail_borrow_detail_component__["a" /* BorrowDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__components_borrow_edit_borrow_edit_component__["a" /* BorrowEditComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__string_filter_pipe__["a" /* StringFilterPipe */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_6_ngx_pagination__["a" /* NgxPaginationModule */],
                 __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only
                 )
                 /*AlertModule.forRoot()*/
             ],
             providers: [],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -471,7 +477,7 @@ module.exports = ""
 /***/ "./src/app/components/book/book.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <h1 class=\"text-light\">Book List\n    <a [routerLink]=\"['/book-create']\" class=\"btn btn-default btn-lg\">\n      <span class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\">+</span>\n    </a>\n  </h1>\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>Title</th>\n        <th>Author</th>\n        <th>State</th>\n        <th>Action</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let book of books\">\n        <td>{{ book.title }}</td>\n        <td>{{ book.author }}</td>\n        <td [ngStyle]=\"calculateStyles(book.state)\">{{ book.state }}</td>\n        <td><a [routerLink]=\"['/book-details', book._id]\">Show Detail</a></td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n"
+module.exports = "<div style=\"height: 28rem !important\">\n  <h1 class=\"text-light\">Book List\n    <a [routerLink]=\"['/book-create']\" class=\"btn btn-default btn-lg\">\n      <span  class=\"btn font-weight-bold\" style=\"font-size: 2em\" aria-hidden=\"true\">+</span>\n    </a>\n  </h1>\n  <label class=\"offset-md-9\">Filter books\n    <input type=\"text\" class=\"input\" placeholder=\"Search...\" [(ngModel)]=\"filter\">\n  </label>\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>Title</th>\n        <th>Author</th>\n        <th>State</th>\n        <th>Action</th>\n      </tr>\n    </thead>\n    <tbody class=\"m-auto\">\n      <tr *ngFor=\"let book of books | stringFilter: filter | paginate: config\">\n        <td>{{ book.title }}</td>\n        <td>{{ book.author }}</td>\n        <td [ngStyle]=\"calculateStyles(book.state)\">{{ book.state }}</td>\n        <td><a [routerLink]=\"['/book-details', book._id]\">Show Detail</a></td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<pagination-controls\n  [id]=\"config.id\"\n  [maxSize]=\"maxSize\"\n  [directionLinks]=\"directionLinks\"\n  [autoHide]=\"autoHide\"\n  [previousLabel]=\"labels.previousLabel\"\n  [nextLabel]=\"labels.nextLabel\"\n  (pageChange)=\"onPageChange($event)\">\n</pagination-controls>\n"
 
 /***/ }),
 
@@ -497,6 +503,19 @@ var BookComponent = /** @class */ (function () {
     function BookComponent(http) {
         this.http = http;
         this.stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
+        this.filter = '';
+        this.maxSize = 7;
+        this.directionLinks = true;
+        this.autoHide = false;
+        this.config = {
+            id: 'advanced',
+            itemsPerPage: 5,
+            currentPage: 1
+        };
+        this.labels = {
+            previousLabel: 'Previous',
+            nextLabel: 'Next'
+        };
     }
     BookComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -511,6 +530,10 @@ var BookComponent = /** @class */ (function () {
         else
             this.stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
         return { 'background': this.stateFlag };
+    };
+    BookComponent.prototype.onPageChange = function (number) {
+        console.log('change to page', number);
+        this.config.currentPage = number;
     };
     BookComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -548,6 +571,8 @@ module.exports = "<p>\n  borrow-create works!\n</p>\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BorrowCreateComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -558,18 +583,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var BorrowCreateComponent = /** @class */ (function () {
-    function BorrowCreateComponent() {
+    function BorrowCreateComponent(http, router) {
+        this.http = http;
+        this.router = router;
     }
     BorrowCreateComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.http.get('/api/book').subscribe(function (data) {
+            console.log(data);
+            _this.books = data;
+        });
     };
     BorrowCreateComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-borrow-create',
             template: __webpack_require__("./src/app/components/borrow-create/borrow-create.component.html"),
-            styles: [__webpack_require__("./src/app/components/borrow-create/borrow-create.component.css")]
+            styles: [__webpack_require__("./src/app/components/borrow-create/borrow-create.component.css")],
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewEncapsulation */].None
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
     ], BorrowCreateComponent);
     return BorrowCreateComponent;
 }());
@@ -716,7 +751,7 @@ module.exports = ""
 /***/ "./src/app/components/borrow/borrow.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <h1 class=\"text-light\">Borrow List\n    <a [routerLink]=\"['/borrow-create']\" class=\"btn btn-default btn-lg\">\n      <span class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\">+</span>\n    </a>\n  </h1>\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>User</th>\n        <th>Book</th>\n        <th>Date Borrowed</th>\n        <th>Action</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let borrow of borrows\">\n        <td>{{ borrow.user_id.name }}</td>\n        <td>{{ borrow.book_id.title }}</td>\n        <td [ngStyle]=\"calculateStyles(date_due(borrow.date_borrowed))\">{{ date_due(borrow.date_borrowed) }} Days Borrowed</td>\n        <td><a [routerLink]=\"['/borrow-details', borrow._id]\">Show Detail</a></td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n"
+module.exports = "<div style=\"height: 28rem !important\">\n  <h1 class=\"text-light\">Borrow List\n    <a [routerLink]=\"['/borrow-create']\" class=\"btn btn-default btn-lg\">\n      <span class=\"btn font-weight-bold\" style=\"font-size: 2em\" aria-hidden=\"true\">+</span>\n    </a>\n  </h1>\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>User</th>\n        <th>Book</th>\n        <th>Date Borrowed</th>\n        <th>Action</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let borrow of borrows | paginate: { itemsPerPage: 5, currentPage: p }\">\n        <td>{{ borrow.user_id.name }}</td>\n        <td>{{ borrow.book_id.title }}</td>\n        <td [ngStyle]=\"calculateStyles(date_due(borrow.date_borrowed))\">{{ date_due(borrow.date_borrowed) }} Days Borrowed</td>\n        <td><a [routerLink]=\"['/borrow-details', borrow._id]\">Show Detail</a></td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<pagination-controls\n  (pageChange)=\"p = $event\">\n</pagination-controls>\n"
 
 /***/ }),
 
@@ -742,6 +777,7 @@ var BorrowComponent = /** @class */ (function () {
     function BorrowComponent(http) {
         this.http = http;
         this.stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
+        this.page = 1;
     }
     BorrowComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1111,7 +1147,7 @@ module.exports = ""
 /***/ "./src/app/components/user/user.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <h1 class=\"text-light\">User List</h1>\n    <a [routerLink]=\"['/user-create']\" class=\"btn btn-default btn-lg\">\n      <span class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\">+</span>\n    </a>\n\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>NID</th>\n        <th>Name</th>\n        <th>E-mail</th>\n        <th>Action</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let user of users\">\n        <td>{{ user.nid }}</td>\n        <td>{{ user.name }}</td>\n        <td>{{ user.email }}</td>\n        <td><a [routerLink]=\"['/user-details', user.nid]\">Show Detail</a></td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n"
+module.exports = "<div style=\"height: 28rem !important\">\n  <h1 class=\"text-light\">User List\n    <a [routerLink]=\"['/user-create']\" class=\"btn btn-default btn-lg\">\n      <span  class=\"btn font-weight-bold\" style=\"font-size: 2em\" aria-hidden=\"true\">+</span>\n    </a>\n  </h1>\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>NID</th>\n        <th>Name</th>\n        <th>E-mail</th>\n        <th>Action</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let user of users | paginate: { itemsPerPage: 5, currentPage: p }\">\n        <td>{{ user.nid }}</td>\n        <td>{{ user.name }}</td>\n        <td>{{ user.email }}</td>\n        <td><a [routerLink]=\"['/user-details', user.nid]\">Show Detail</a></td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<pagination-controls\n  (pageChange)=\"p = $event\">\n</pagination-controls>\n"
 
 /***/ }),
 
@@ -1136,6 +1172,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserComponent = /** @class */ (function () {
     function UserComponent(http) {
         this.http = http;
+        this.page = 1;
     }
     UserComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1154,6 +1191,55 @@ var UserComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], UserComponent);
     return UserComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/string-filter-pipe.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StringFilterPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+/**
+ * STRING-FILTER PIPE
+ * Filtra un string
+ */
+var StringFilterPipe = /** @class */ (function () {
+    function StringFilterPipe() {
+    }
+    StringFilterPipe.prototype.transform = function (list, filterBy) {
+        if (filterBy) {
+            filterBy = filterBy.toLocaleLowerCase();
+            return list.filter(function (item) {
+                return Object.keys(item).some(function (prop) {
+                    var value = item[prop];
+                    if (typeof value === "string") {
+                        value = value.toLocaleLowerCase();
+                    }
+                    return value.toString().indexOf(filterBy) !== -1;
+                });
+            });
+        }
+        else {
+            return list;
+        }
+    };
+    StringFilterPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Pipe */])({
+            name: 'stringFilter'
+        })
+    ], StringFilterPipe);
+    return StringFilterPipe;
 }());
 
 
