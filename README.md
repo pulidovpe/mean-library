@@ -27,6 +27,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Mongodb 3.2.11
 - Bootstrap 4.1.0
 - ngx-bootstrap 3.0.0
+- ngx-pagination 3.1.1
 
 ## Install / Instalación
 #### OS X, Linux y Windows
@@ -45,6 +46,7 @@ npm start
 - [x] Subir mis primeros cambios a GitHub
 - [x] Completar el back-end
 - [x] Probar el API
+- [x] Pruebas en el front-end con Angular 5
 - [ ] Completar el front-end
 
 ## Contribute / Para contribuir
