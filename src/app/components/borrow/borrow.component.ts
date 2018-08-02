@@ -16,9 +16,13 @@ export class BorrowComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('/api/borrow').subscribe(data => {
-      this.borrows = data;
-    });
+    this.http.get('/api/borrow')
+      .subscribe(data => {
+        this.borrows = data;
+      }, (err) => {
+        console.log(err);
+      }
+    );
   }
 
   date_due(day) {

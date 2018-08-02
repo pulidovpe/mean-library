@@ -28,10 +28,13 @@ export class BookComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('/api/book').subscribe(data => {
-      console.log(data);
-      this.books = data;
-    });
+    this.http.get('/api/book')
+      .subscribe(data => {
+        console.log(data);
+        this.books = data;
+      },
+      err => console.log(err)
+    );
   }
 
   calculateStyles(state) {

@@ -14,10 +14,14 @@ export class BorrowCreateComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
-    this.http.get('/api/book').subscribe(data => {
-      console.log(data);
-      this.books = data;
-    });
+    this.http.get('/api/book')
+      .subscribe(data => {
+        console.log(data);
+        this.books = data;
+      }, (err) => {
+        console.log(err);
+      }
+    );
   }
   /*
   hacer un buscador para los libros, luego un formulario para el usuario

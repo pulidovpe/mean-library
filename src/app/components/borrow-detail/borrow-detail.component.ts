@@ -18,9 +18,13 @@ export class BorrowDetailComponent implements OnInit {
   }
 
   getBorrowDetail(id) {
-    this.http.get('/api/borrow/'+id).subscribe(data => {
-      this.borrow = data;
-    });
+    this.http.get('/api/borrow/'+id)
+      .subscribe(data => {
+        this.borrow = data;
+      }, (err) => {
+        console.log(err);
+      }
+    );
   }
 
   returnBorrow(id1,id2) {

@@ -19,20 +19,24 @@ export class UserEditComponent implements OnInit {
   }
 
   getUser(id) {
-    this.http.get('/api/user/'+id).subscribe(data => {
-      this.user = data;
-    });
+    this.http.get('/api/user/'+id)
+      .subscribe(data => {
+        this.user = data;
+      }, (err) => {
+        console.log(err);
+      }
+    );
   }
 
   updateUser(id) {
     this.http.put('/api/user/'+id, this.user)
       .subscribe(res => {
-          let id = res['nid'];
-          this.router.navigate(['/user-details', id]);
-        }, (err) => {
-          console.log(err);
-        }
-      );
+        let id = res['nid'];
+        this.router.navigate(['/user-details', id]);
+      }, (err) => {
+        console.log(err);
+      }
+    );
   }
 
 }

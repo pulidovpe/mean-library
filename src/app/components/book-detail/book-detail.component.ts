@@ -18,15 +18,18 @@ export class BookDetailComponent implements OnInit {
   }
 
   getBookDetail(id) {
-    this.http.get('/api/book/'+id).subscribe(data => {
-      this.book = data;
-    });
+    this.http.get('/api/book/'+id)
+      .subscribe(data => {
+        this.book = data;
+      },
+      err => console.log(err)
+    );
   }
 
   deleteBook(id) {
     if(window.confirm("Are you sure to delete?")) {
       this.http.delete('/api/book/'+id)
-      .subscribe(res => {
+        .subscribe(res => {
           this.router.navigate(['/books']);
         }, (err) => {
           console.log(err);

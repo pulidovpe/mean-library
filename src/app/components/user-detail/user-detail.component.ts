@@ -18,9 +18,13 @@ export class UserDetailComponent implements OnInit {
   }
 
   getUserDetail(id) {
-    this.http.get('/api/user/'+id).subscribe(data => {
-      this.user = data;
-    });
+    this.http.get('/api/user/'+id)
+      .subscribe(data => {
+        this.user = data;
+      }, (err) => {
+        console.log(err);
+      }
+    );
   }
 
   deleteUser(id) {

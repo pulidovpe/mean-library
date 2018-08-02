@@ -15,10 +15,14 @@ export class UserComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('/api/user').subscribe(data => {
-      console.log(data);
-      this.users = data;
-    });
+    this.http.get('/api/user')
+      .subscribe(data => {
+        console.log(data);
+        this.users = data;
+      }, (err) => {
+        console.log(err);
+      }
+    );
   }
 
 }

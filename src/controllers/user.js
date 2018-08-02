@@ -3,10 +3,10 @@ const User = require('../models/User');
 async function getUsers(req,res) {
    try {
       const users = await User.find({});
-      res.json(users);
+      res.status(200).json(users);
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      return res.status(404).json({ error: err.message });
    }
 }
 // Get user by the NID
@@ -14,10 +14,10 @@ async function getUser(req,res) {
    try {
       const nid = req.params.id;
       const user = await User.findOne({nid});
-      res.json(user);
+      res.status(200).json(user);
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      return res.status(404).json({ error: err.message });
    }
 }
 
@@ -26,10 +26,13 @@ async function saveUser(req,res) {
       const { nid,name,email,address } = req.body;
       const newUser = new User({ nid,name,email,address });
       const saved = await newUser.save();
-      res.json(saved);
+      res.status(201).json(saved);
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if (err.name === 'ValidationError') {
+        return res.status(400).json({ error: err.message });
+      }
+      return res.status(404).json({ error: err.message });
    }
 }
 
@@ -41,8 +44,11 @@ async function updateUser(req,res) {
       const updated = await User.findByIdAndUpdate(_id, updUser);
       res.status(200).json(updated);
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if (err.name === 'ValidationError') {
+        return res.status(400).json({ error: err.message });
+      }
+      return res.status(404).json({ error: err.message });
    }
 }
 
@@ -52,8 +58,11 @@ async function deleteUser(req,res) {
       await User.findByIdAndRemove(id);
       res.status(200).send({ status: 'User deleted' });
    } catch (err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if (err.name === 'ValidationError') {
+        return res.status(400).json({ error: err.message });
+      }
+      return res.status(404).json({ error: err.message });
    }
 }
 

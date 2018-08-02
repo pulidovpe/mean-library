@@ -3,10 +3,10 @@ const Book = require('../models/Book');
 async function getBooks(req,res) {
    try {
       const books = await Book.find();
-      res.json(books);
+      res.status(200).json(books);
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      return res.status(404).json({ error: err.message });
    }
 }
 
@@ -14,10 +14,10 @@ async function getBook(req,res) {
    try {
       const id = req.params.id;
       const book = await Book.findById(id);
-      res.json(book);
+      res.status(200).json(book);
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      return res.status(404).json({ error: err.message });
    }
 }
 
@@ -26,10 +26,13 @@ async function saveBook(req,res) {
       const { title,author,editorial,language,state } = req.body;
       const newBook = new Book({ title,author,editorial,language,state });
       const saved = await newBook.save();
-      res.json(saved);
+      res.status(200).json(saved);
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if (err.name === 'ValidationError') {
+        return res.status(400).json({ error: err.message });
+      }
+      return res.status(404).json({ error: err.message });
    }
 }
 
@@ -41,8 +44,11 @@ async function updateBook(req,res) {
       const updated = await Book.findByIdAndUpdate(id, updBook);
       res.status(200).json(updated);
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if (err.name === 'ValidationError') {
+        return res.status(400).json({ error: err.message });
+      }
+      return res.status(404).json({ error: err.message });
    }
 }
 
@@ -52,8 +58,11 @@ async function deleteBook(req,res) {
       await Book.findByIdAndRemove(id);
       res.sendStatus(200).send({ status: 'Book deleted' });
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if (err.name === 'ValidationError') {
+        return res.status(400).json({ error: err.message });
+      }
+      return res.status(404).json({ error: err.message });
    }
 }
 

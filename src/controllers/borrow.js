@@ -9,13 +9,13 @@ async function getBorrows(req,res) {
       ]).exec((err, brws) => {
         if(err || brws === undefined) res.status(404).send({ error: 'Something failed. Not found!' });
         else {
-          res.json(brws);
-          console.log('Mostramos los datos: ' + brws);
+          res.status(200).json(brws);
+          console.log('Lets show data: ' + brws);
         }
       });
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      return res.status(404).json({ error: err.message });
    }
 }
 
@@ -32,8 +32,8 @@ async function getBorrow(req,res) {
         } else res.json(brws);
       });
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      return res.status(404).json({ error: err.message });
    }
 }
 // borrow a book
@@ -53,8 +53,11 @@ async function saveBorrow(req,res) {
          });
       });
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if (err.name === 'ValidationError') {
+        return res.status(400).json({ error: err.message });
+      }
+      return res.status(404).json({ error: err.message });
    }
 }
 // return a book
@@ -75,8 +78,11 @@ async function updateBorrow(req,res) {
          });
       });
    } catch(err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if (err.name === 'ValidationError') {
+        return res.status(400).json({ error: err.message });
+      }
+      return res.status(404).json({ error: err.message });
    }
 }
 
@@ -86,8 +92,11 @@ async function deleteBorrow(req,res) {
       await Borrow.findByIdAndRemove(id);
       res.status(200).send({ status: 'Borrow deleted' });
    } catch (err) {
-      res.sendStatus(err.status || 404);
-      console.log(`err: ${err.status} - message: ${err.message}`);
+      console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if (err.name === 'ValidationError') {
+        return res.status(400).json({ error: err.message });
+      }
+      return res.status(404).json({ error: err.message });
    }
 }
 

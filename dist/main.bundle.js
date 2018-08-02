@@ -349,9 +349,10 @@ var BookDetailComponent = /** @class */ (function () {
     };
     BookDetailComponent.prototype.getBookDetail = function (id) {
         var _this = this;
-        this.http.get('/api/book/' + id).subscribe(function (data) {
+        this.http.get('/api/book/' + id)
+            .subscribe(function (data) {
             _this.book = data;
-        });
+        }, function (err) { return console.log(err); });
     };
     BookDetailComponent.prototype.deleteBook = function (id) {
         var _this = this;
@@ -437,8 +438,11 @@ var BookEditComponent = /** @class */ (function () {
     };
     BookEditComponent.prototype.getBook = function (id) {
         var _this = this;
-        this.http.get('/api/book/' + id).subscribe(function (data) {
+        this.http.get('/api/book/' + id)
+            .subscribe(function (data) {
             _this.book = data;
+        }, function (err) {
+            console.log(err);
         });
     };
     BookEditComponent.prototype.updateBook = function (id) {
@@ -519,10 +523,11 @@ var BookComponent = /** @class */ (function () {
     }
     BookComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/book').subscribe(function (data) {
+        this.http.get('/api/book')
+            .subscribe(function (data) {
             console.log(data);
             _this.books = data;
-        });
+        }, function (err) { return console.log(err); });
     };
     BookComponent.prototype.calculateStyles = function (state) {
         if (state === 'inactive')
@@ -592,9 +597,12 @@ var BorrowCreateComponent = /** @class */ (function () {
     }
     BorrowCreateComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/book').subscribe(function (data) {
+        this.http.get('/api/book')
+            .subscribe(function (data) {
             console.log(data);
             _this.books = data;
+        }, function (err) {
+            console.log(err);
         });
     };
     BorrowCreateComponent = __decorate([
@@ -659,8 +667,11 @@ var BorrowDetailComponent = /** @class */ (function () {
     };
     BorrowDetailComponent.prototype.getBorrowDetail = function (id) {
         var _this = this;
-        this.http.get('/api/borrow/' + id).subscribe(function (data) {
+        this.http.get('/api/borrow/' + id)
+            .subscribe(function (data) {
             _this.borrow = data;
+        }, function (err) {
+            console.log(err);
         });
     };
     BorrowDetailComponent.prototype.returnBorrow = function (id1, id2) {
@@ -781,8 +792,11 @@ var BorrowComponent = /** @class */ (function () {
     }
     BorrowComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/borrow').subscribe(function (data) {
+        this.http.get('/api/borrow')
+            .subscribe(function (data) {
             _this.borrows = data;
+        }, function (err) {
+            console.log(err);
         });
     };
     BorrowComponent.prototype.date_due = function (day) {
@@ -1030,8 +1044,11 @@ var UserDetailComponent = /** @class */ (function () {
     };
     UserDetailComponent.prototype.getUserDetail = function (id) {
         var _this = this;
-        this.http.get('/api/user/' + id).subscribe(function (data) {
+        this.http.get('/api/user/' + id)
+            .subscribe(function (data) {
             _this.user = data;
+        }, function (err) {
+            console.log(err);
         });
     };
     UserDetailComponent.prototype.deleteUser = function (id) {
@@ -1107,8 +1124,11 @@ var UserEditComponent = /** @class */ (function () {
     };
     UserEditComponent.prototype.getUser = function (id) {
         var _this = this;
-        this.http.get('/api/user/' + id).subscribe(function (data) {
+        this.http.get('/api/user/' + id)
+            .subscribe(function (data) {
             _this.user = data;
+        }, function (err) {
+            console.log(err);
         });
     };
     UserEditComponent.prototype.updateUser = function (id) {
@@ -1176,9 +1196,12 @@ var UserComponent = /** @class */ (function () {
     }
     UserComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/user').subscribe(function (data) {
+        this.http.get('/api/user')
+            .subscribe(function (data) {
             console.log(data);
             _this.users = data;
+        }, function (err) {
+            console.log(err);
         });
     };
     UserComponent = __decorate([
