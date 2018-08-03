@@ -940,7 +940,7 @@ module.exports = "textarea { resize: none; }\n"
 /***/ "./src/app/components/user-create/user-create.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"d-flex justify-content-center\">\n  <div class=\"col-md-8 justify-content-start\">\n    <h1 class=\"text-light\">Add New User</h1>\n    <form (ngSubmit)=\"saveUser()\" #userForm=\"ngForm\">\n      <div class=\"form-group\">\n        <label for=\"name\">NID</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"user.nid\" name=\"nid\" required>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"name\">Name</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"user.name\" name=\"name\" required>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"name\">E-mail</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"user.email\" name=\"email\" required>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"name\">Address</label>\n        <textarea class=\"form-control\" [(ngModel)]=\"user.address\" name=\"address\" required></textarea>\n      </div>\n      <div class=\"justify-content-center\">\n        <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!userForm.form.valid\">Save</button>\n        <a [routerLink]=\"['/users']\" class=\"btn btn-warning\">CANCEL</a>\n      </div>\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"d-flex justify-content-center\">\n   <div class=\"col-md-8 justify-content-start\">\n<h1 class=\"text-light\">Add New User</h1>\n<form (ngSubmit)=\"saveUser()\" #userForm=\"ngForm\">\n      <div class=\"form-group\" [ngClass]=\"{'has-error': !nid.valid && (nid.dirty || nid.touched)}\">\n         <label for=\"nid\">NID</label>\n         <input type=\"text\" class=\"form-control\" [(ngModel)]=\"user.nid\" name=\"nid\" #nid=\"ngModel\" maxlength=\"10\" required>\n         <span *ngIf=\"nid.invalid && (nid.dirty || nid.touched)\" class=\"help-block\">\n            <div *ngIf=\"nid.errors.required\">\n               Name is required\n            </div>\n            <div *ngIf=\"nid.errors.maxlength\">\n               Name must not exceed 25 characters\n            </div>\n         </span>\n      </div>\n      <div class=\"form-group\">\n         <label for=\"name\">Name</label>\n         <input type=\"text\" class=\"form-control\" [(ngModel)]=\"user.name\" name=\"name\" required>\n      </div>\n      <div class=\"form-group\">\n         <label for=\"name\">E-mail</label>\n         <input type=\"text\" class=\"form-control\" [(ngModel)]=\"user.email\" name=\"email\" required>\n      </div>\n      <div class=\"form-group\">\n         <label for=\"name\">Address</label>\n         <textarea class=\"form-control\" [(ngModel)]=\"user.address\" name=\"address\" required></textarea>\n      </div>\n      <div class=\"justify-content-center\">\n         <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!userForm.form.valid\">Save</button>\n         <a [routerLink]=\"['/users']\" class=\"btn btn-warning\">CANCEL</a>\n      </div>\n      </form>\n   </div>\n</div>\n"
 
 /***/ }),
 
@@ -971,6 +971,27 @@ var UserCreateComponent = /** @class */ (function () {
         this.user = {};
     }
     UserCreateComponent.prototype.ngOnInit = function () {
+        /*this.userForm = new FormGroup({
+           'nid': new FormControl(this.userForm.nid, [
+              Validators.required,
+              Validators.minLength(6),
+              Validators.maxLength(10)
+           ]),
+           'name': new FormControl(this.userForm.name, [
+              Validators.required,
+              Validators.minLength(6),
+              Validators.maxLength(25)
+           ]),
+           'email': new FormControl(this.userForm.email, [
+              Validators.required,
+              Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+           ]),
+           'address': new FormControl(this.userForm.address, [
+              Validators.required,
+              Validators.minLength(6),
+              Validators.maxLength(50)
+           ])
+        });*/
     };
     UserCreateComponent.prototype.saveUser = function () {
         var _this = this;

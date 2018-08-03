@@ -10,7 +10,7 @@ async function getBorrows(req,res) {
         if(err || brws === undefined) res.status(404).send({ error: 'Something failed. Not found!' });
         else {
           res.status(200).json(brws);
-          console.log('Lets show data: ' + brws);
+          /*console.log('Lets show data: ' + brws);*/
         }
       });
    } catch(err) {

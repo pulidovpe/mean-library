@@ -47,6 +47,7 @@ testem.log
 Thumbs.db
 
 # credentials
+.env
 auth.js*
 server_crt.pem
 server_key.pem

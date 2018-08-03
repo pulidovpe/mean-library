@@ -11,6 +11,7 @@ const http = require('http');
  */
 const { app: { port } } = require('../config/config');
 /**
+request.headers.host
  * Create HTTP server.
  */
 const server = http.createServer(app);

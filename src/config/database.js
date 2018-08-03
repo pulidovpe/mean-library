@@ -1,9 +1,9 @@
 // database.js
 const mongoose = require('mongoose');
-const { db: { host, port, name } } = require('./config');
+const { db: { host, port, name, user, pass } } = require('./config');
 
 /*const connStr = `mongodb://${host}:${port}/${name}`;*/
-const connStr = `mongodb://******:******@ds255451.mlab.com:55451/mean-library`;
+const connStr = `mongodb://${user}:${pass}@${host}:${port}/${name}`;
 
 mongoose.connect(connStr)
   .then( () => console.log(`DB ${name} is connected`) )
