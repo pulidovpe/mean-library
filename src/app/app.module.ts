@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
-/*import { AlertModule } from 'ngx-bootstrap';*/
+import { PopoverModule } from 'ngx-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';

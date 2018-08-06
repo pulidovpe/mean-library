@@ -1,7 +1,7 @@
 // config.js
 require('dotenv').config();
 
-const dev = {
+const prod = {
    app: {
       port: parseInt(process.env.PORT) || 3000
    },
@@ -13,7 +13,7 @@ const dev = {
       pass: process.env.DEV_DB_PASS
    }
 };
-const test = {
+const dev = {
    app: {
       port: parseInt(3000)
    },
