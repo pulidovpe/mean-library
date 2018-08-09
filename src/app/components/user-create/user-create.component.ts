@@ -1,52 +1,72 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+/*import { HttpClient } from '@angular/common/http';*/
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiUserService } from '../../services/api-user.service';
 
 @Component({
    selector: 'app-user-create',
    templateUrl: './user-create.component.html',
    styleUrls: ['./user-create.component.css'],
+   providers: [ApiUserService],
    encapsulation: ViewEncapsulation.None
 })
 export class UserCreateComponent implements OnInit {
 
-   user = {};
-
-   constructor(private http: HttpClient, private router: Router) { }
-
-   ngOnInit() {
-      /*this.userForm = new FormGroup({
-         'nid': new FormControl(this.userForm.nid, [
-            Validators.required,
-            Validators.minLength(6),
-            Validators.maxLength(10)
-         ]),
-         'name': new FormControl(this.userForm.name, [
-            Validators.required,
-            Validators.minLength(6),
-            Validators.maxLength(25)
-         ]),
-         'email': new FormControl(this.userForm.email, [
-            Validators.required,
-            Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-         ]),
-         'address': new FormControl(this.userForm.address, [
-            Validators.required,
-            Validators.minLength(6),
-            Validators.maxLength(50)
-         ])
-      });*/
+   title = 'Add New User';
+   userForm: FormGroup;
+   user_validation_messages = {
+      'nid': [
+         { type: 'required', message: 'NID is required' },
+         { type: 'minlength', message: 'NID must be at least 6 characters long' },
+         { type: 'maxlength', message: 'NID cannot be more than 10 characters long' },
+         { type: 'pattern', message: 'Your NID must contain only numbers' }
+      ],
+      'name': [
+         { type: 'required', message: 'The name is required' },
+         { type: 'minlength', message: 'Name must be at least 6 characters long' },
+         { type: 'maxlength', message: 'Name cannot be more than 30 characters long' }
+      ],
+      'email': [
+         { type: 'required', message: 'Email is required' },
+         { type: 'email', message: 'Enter a valid email' }
+      ],
+      'address': [
+         { type: 'required', message: 'Address is required' }
+      ]
    }
 
-   saveUser() {
-      this.http.post('/api/user', this.user)
-         .subscribe(res => {
-           let id = res['nid'];
-           this.router.navigate(['/user-details', id]);
-         }, (err) => {
-           console.log(err);
-         }
-      );
+   constructor(private userservice: ApiUserService, private fb: FormBuilder) {
+      this.createForm();
+   }
+
+   createForm() {
+      this.userForm = this.fb.group({
+         nid: [null, Validators.compose([
+            Validators.required,
+            Validators.minLength(6),
+            Validators.maxLength(10),
+            Validators.pattern(/^[1-9]\d{6,10}$/)
+         ])],
+         name: [null, Validators.compose([
+            Validators.required,
+            Validators.minLength(6),
+            Validators.maxLength(30)
+         ])],
+         email: [null, Validators.compose([
+            Validators.required,
+            Validators.email
+         ])],
+         address: [null, Validators.compose([
+            Validators.required
+         ])]
+      });
+   }
+
+   saveUser(nid, name, email, address) {
+      this.userservice.saveUser(nid, name, email, address);
+   }
+
+   ngOnInit() {
    }
 
 }
