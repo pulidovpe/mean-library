@@ -28,6 +28,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Bootstrap 4.1.0
 - ngx-bootstrap 3.0.0
 - ngx-pagination 3.1.1
+- Alertifyjs 1.11.1
 
 ## Install / Instalación
 #### OS X, Linux y Windows
