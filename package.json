@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node ./src/bin/www",
+    "start": "node src/bin/www",
     "build": "ng build --prod",
     "dev": "ng build && nodemon ./src/bin/www",
     "test": "ng test",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "alertifyjs": "^1.11.1",
     "bootstrap": "^4.1.0",
     "core-js": "^2.4.1",
     "express": "^4.16.3",

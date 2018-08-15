@@ -6,6 +6,7 @@ async function getUsers(req,res) {
       res.status(200).json(users);
    } catch(err) {
       console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if(err.status == '503' || err.status == '504') return res.status(503).json({ error: err.message });
       return res.status(404).json({ error: err.message });
    }
 }
@@ -17,6 +18,7 @@ async function getUser(req,res) {
       res.status(200).json(user);
    } catch(err) {
       console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
+      if(err.status == '503' || err.status == '504') return res.status(503).json({ error: err.message });
       return res.status(404).json({ error: err.message });
    }
 }
@@ -29,9 +31,8 @@ async function saveUser(req,res) {
       res.status(201).json(saved);
    } catch(err) {
       console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
-      if (err.name === 'ValidationError') {
-        return res.status(400).json({ error: err.message });
-      }
+      if(err.name == 'ValidationError') return res.status(400).json({ error: err.message });
+      if(err.name == 'MongoError') return res.status(409).send({ error: 'Duplicate key error' });
       return res.status(404).json({ error: err.message });
    }
 }
@@ -45,9 +46,8 @@ async function updateUser(req,res) {
       res.status(200).json(updated);
    } catch(err) {
       console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
-      if (err.name === 'ValidationError') {
-        return res.status(400).json({ error: err.message });
-      }
+      if(err.name == 'ValidationError') return res.status(400).json({ error: err.message });
+      if(err.name == 'MongoError') return res.status(409).send({ error: 'Duplicate key error' });
       return res.status(404).json({ error: err.message });
    }
 }
@@ -59,9 +59,6 @@ async function deleteUser(req,res) {
       res.status(200).send({ status: 'User deleted' });
    } catch (err) {
       console.log(`err: ${err.status} - name: ${err.name} - message: ${err.message}`);
-      if (err.name === 'ValidationError') {
-        return res.status(400).json({ error: err.message });
-      }
       return res.status(404).json({ error: err.message });
    }
 }

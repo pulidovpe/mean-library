@@ -47,7 +47,10 @@ npm start
 - [x] Completar el back-end
 - [x] Probar el API
 - [x] Pruebas en el front-end con Angular 5
+- [x] Se hizo deploy en heroku.
 - [ ] Completar el front-end
+
+> Se puede ver la app (actualmente en desarrollo) desplegada en [heroku](https://mean-library.herokuapp.com/)
 
 ## Contribute / Para contribuir
 1. Has un [Fork](https://github.com/pulidovpe/mean-library/fork)

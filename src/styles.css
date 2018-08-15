@@ -95,6 +95,7 @@ h1,h2,td,th,dt,dd,label,span,p {
   /*background: #585858;*/
   background: white;
   color: #fff;
+  color: black;
   content: attr(tooltip);
   font-size: 12px;
   visibility: hidden;

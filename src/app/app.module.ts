@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
@@ -22,7 +22,9 @@ import { BorrowComponent } from './components/borrow/borrow.component';
 import { BorrowCreateComponent } from './components/borrow-create/borrow-create.component';
 import { BorrowDetailComponent } from './components/borrow-detail/borrow-detail.component';
 import { BorrowEditComponent } from './components/borrow-edit/borrow-edit.component';
+import { ErrorHandlerService } from './services/error-handler.service';
 import { StringFilterPipe } from './string-filter-pipe';
+import { AlertifyService } from './services/alertify.service';
 
 const appRoutes: Routes = [
   {
@@ -107,6 +109,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,
     BsDropdownModule.forRoot(),
@@ -116,7 +119,11 @@ const appRoutes: Routes = [
     )
     /*AlertModule.forRoot()*/
   ],
-  providers: [],
+  providers: [
+    AlertifyService,
+    ErrorHandlerService,
+    {provide: ErrorHandler, useClass: ErrorHandlerService}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

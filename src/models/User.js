@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const email_match = [/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,"Coloca un email valido"];
+const email_match = [/^[a-zA-Z0-9._-]{2,64}@(?:[a-zA-Z0-9.-]{2,63}\.)[a-zA-Z]{2,6}$/,"Wrong email format"];
+const name_match = [/^[a-zA-Z \t]{6,30}$/,"Wrong name format"];
 
 const user_schema = new Schema({
   nid: {
@@ -15,7 +16,8 @@ const user_schema = new Schema({
     type: String,
     required: true,
     maxlength: [30,"Too big"],
-    minlength: [6,"Too small"]
+    minlength: [6,"Too small"],
+    match: name_match
   },
   email: {
     type: String,
