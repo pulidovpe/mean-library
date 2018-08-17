@@ -1,15 +1,12 @@
 <div style="height: 28rem !important">
-  <h1 class="text-light">Book List</h1>
-  <label class="offset-md-9">Filter books
-    <input type="text" class="input" placeholder="Search..." [(ngModel)]="filter">
-  </label>
+  <h1 class="text-light">{{title}}</h1>
   <table class="table">
     <thead>
       <tr>
         <th>Title</th>
         <th>Author</th>
         <th>State</th>
-        <th>Action</th>
+        <th><input type="text" class="input" placeholder="Search..." [(ngModel)]="filter"></th>
       </tr>
     </thead>
     <tbody class="m-auto">

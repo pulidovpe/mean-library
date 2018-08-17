@@ -1,16 +1,19 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ErrorHandlerService } from '../../services/error-handler.service';
+import { ApiBookService } from '../../services/api-book.service';
 
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.css'],
+  providers: [ApiBookService,ErrorHandlerService],
   encapsulation: ViewEncapsulation.None
 })
 export class BookComponent implements OnInit {
+
   books: any;
   stateFlag = 'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))';
-
+  title = 'Book List';
   public filter: string = '';
   public maxSize: number = 7;
   public directionLinks: boolean = true;
@@ -25,16 +28,16 @@ export class BookComponent implements OnInit {
       nextLabel: 'Next'
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private handler: ErrorHandlerService, private bookservice: ApiBookService) { }
 
   ngOnInit() {
-    this.http.get('/api/book')
-      .subscribe(data => {
-        console.log(data);
-        this.books = data;
-      },
-      err => console.log(err)
-    );
+    this.bookservice.getBooks()
+      .subscribe(books => {
+        this.books = books;
+      }, (err) => {
+        this.handler.handleError(err);
+        console.log(err);
+      });
   }
 
   calculateStyles(state) {

@@ -13,9 +13,24 @@ export class UserComponent implements OnInit {
 
   title = 'User List';
   users: any;
-  page: number = 1;
+  public filter: string = '';
+  public maxSize: number = 7;
+  public directionLinks: boolean = true;
+  public autoHide: boolean = false;
+  public config: any = {
+      id: 'advanced',
+      itemsPerPage: 5,
+      currentPage: 1
+  };
+  public labels: any = {
+      previousLabel: 'Previous',
+      nextLabel: 'Next'
+  };
 
   constructor(private handler: ErrorHandlerService, private userservice: ApiUserService) {
+  }
+
+  ngOnInit() {
     this.userservice.getUsers()
       .subscribe(users => {
         this.users = users;
@@ -25,6 +40,8 @@ export class UserComponent implements OnInit {
       });
   }
 
-  ngOnInit() {
+  onPageChange(number: number) {
+    console.log('change to page', number);
+    this.config.currentPage = number;
   }
 }

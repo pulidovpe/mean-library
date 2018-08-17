@@ -1,16 +1,16 @@
 <div style="height: 28rem !important">
-  <h1 class="text-light">{{ title }}</h1>
+  <h1 class="text-light">{{title}}</h1>
   <table class="table">
     <thead>
       <tr>
         <th>NID</th>
         <th>Name</th>
         <th>E-mail</th>
-        <th>Action</th>
+        <th><input type="text" class="input" placeholder="Search..." [(ngModel)]="filter"></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }">
+      <tr *ngFor="let user of users | stringFilter: filter | paginate: config ">
         <td>{{ user.nid }}</td>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
@@ -20,7 +20,13 @@
   </table>
 </div>
 <pagination-controls
-  (pageChange)="p = $event">
+  [id]="config.id"
+  [maxSize]="maxSize"
+  [directionLinks]="directionLinks"
+  [autoHide]="autoHide"
+  [previousLabel]="labels.previousLabel"
+  [nextLabel]="labels.nextLabel"
+  (pageChange)="onPageChange($event)">
 </pagination-controls>
 <nav class="btn-floating">
   <a [routerLink]="['/user-create']" class="buttons" tooltip="Add" href="#"></a>

@@ -9,7 +9,7 @@ const book_schema = new Schema({
     type: String,
     required: true,
     maxlength: [50,"Title too big"],
-    minlength: [2,"Title too small"]
+    minlength: [3,"Title too small"]
   },
   author: {
     type: String,
