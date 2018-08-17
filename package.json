@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node src/bin/www",
-    "build": "ng build --prod",
+    "build": "ng build --env=prod",
     "dev": "ng build && nodemon ./src/bin/www",
     "test": "ng test",
     "lint": "ng lint",
