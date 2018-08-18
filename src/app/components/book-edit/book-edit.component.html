@@ -1,36 +1,67 @@
 <div class="d-flex justify-content-center">
   <div class="col-md-8 justify-content-start">
-    <h1 class="text-light">Edit Book</h1>
-    <form (ngSubmit)="updateBook(book._id)" #bookForm="ngForm" role="form">
+    <h1 class="text-light">{{ main_title }}</h1>
+    <!-- <form (ngSubmit)="updateBook(book._id)" #bookForm="ngForm" role="form"> -->
+      <form [formGroup]="bookForm">
       <div class="form-group">
         <label for="name">Title</label>
-        <input type="text" class="form-control" [(ngModel)]="book.title" name="title" required>
+        <input type="text" class="form-control" formControlName="title" #title [(ngModel)]="book.title">
+      </div>
+      <div *ngIf="bookForm.controls['title'].invalid && (bookForm.controls['title'].dirty || bookForm.controls['title'].touched)" class="text-light badge-danger my-2 py-2">
+         <div *ngFor="let validation of book_validation_messages.title" >
+            <div style="font-size: smaller !important;" *ngIf="bookForm.get('title').hasError(validation.type) && (bookForm.get('title').dirty || bookForm.get('title').touched)">{{validation.message}}
+            </div>
+         </div>
       </div>
       <div class="form-group">
         <label for="name">Author</label>
-        <input type="text" class="form-control" [(ngModel)]="book.author" name="author" required>
+        <input type="text" class="form-control" formControlName="author" #author [(ngModel)]="book.author">
+      </div>
+      <div *ngIf="bookForm.controls['author'].invalid && (bookForm.controls['author'].dirty || bookForm.controls['author'].touched)" class="text-light badge-danger my-2 py-2">
+         <div *ngFor="let validation of book_validation_messages.author" >
+            <div style="font-size: smaller !important;" *ngIf="bookForm.get('author').hasError(validation.type) && (bookForm.get('author').dirty || bookForm.get('author').touched)">{{validation.message}}
+            </div>
+         </div>
       </div>
       <div class="form-group">
         <label for="name">Language</label>
-        <select placeholder="Select" [(ngModel)]="book.language" required name="language">
+        <select placeholder="Select" formControlName="language" #language [(ngModel)]="book.language">
           <option [value]="book.language" selected="selected">{{book.language}}</option>
           <option *ngFor="let l of languages" [value]="l.language">{{l.name}}</option>
         </select>
       </div>
+      <div *ngIf="bookForm.controls['language'].invalid && (bookForm.controls['language'].dirty || bookForm.controls['language'].touched)" class="text-light badge-danger my-2 py-2">
+         <div *ngFor="let validation of book_validation_messages.language" >
+            <div style="font-size: smaller !important;" *ngIf="bookForm.get('language').hasError(validation.type) && (bookForm.get('language').dirty || bookForm.get('language').touched)">{{validation.message}}
+            </div>
+         </div>
+      </div>
       <div class="form-group">
         <label for="name">Editorial</label>
-        <input type="text" class="form-control" [(ngModel)]="book.editorial" name="editorial" required>
+        <input type="text" class="form-control" formControlName="editorial" #editorial [(ngModel)]="book.editorial">
+      </div>
+      <div *ngIf="bookForm.controls['editorial'].invalid && (bookForm.controls['editorial'].dirty || bookForm.controls['editorial'].touched)" class="text-light badge-danger my-2 py-2">
+         <div *ngFor="let validation of book_validation_messages.editorial" >
+            <div style="font-size: smaller !important;" *ngIf="bookForm.get('editorial').hasError(validation.type) && (bookForm.get('editorial').dirty || bookForm.get('editorial').touched)">{{validation.message}}
+            </div>
+         </div>
       </div>
       <div class="form-group">
         <label for="name">State</label>
-        <select placeholder="Select" [(ngModel)]="book.state" required name="state">
+        <select placeholder="Select" formControlName="state" #state [(ngModel)]="book.state">
           <option [value]="book.state" selected="selected">{{book.state}}</option>
           <option *ngFor="let st of states" [value]="st.state">{{st.name}}</option>
         </select>
       </div>
+      <div *ngIf="bookForm.controls['state'].invalid && (bookForm.controls['state'].dirty || bookForm.controls['state'].touched)" class="text-light badge-danger my-2 py-2">
+         <div *ngFor="let validation of book_validation_messages.state" >
+            <div style="font-size: smaller !important;" *ngIf="bookForm.get('state').hasError(validation.type) && (bookForm.get('state').dirty || bookForm.get('state').touched)">{{validation.message}}
+            </div>
+         </div>
+      </div>
       <div class="justify-content-center">
-        <button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Update</button>
-        <a [routerLink]="['/books']" class="btn btn-warning">CANCEL</a>
+        <button (click)="updateBook(book._id, title.value, author.value, language.value, editorial.value, state.value)" [disabled]="!bookForm.valid" class="btn btn-primary">UPDATE</button>
+        <a [routerLink]="['/book-details', book._id]" class="btn btn-warning">CANCEL</a>
       </div>
     </form>
   </div>

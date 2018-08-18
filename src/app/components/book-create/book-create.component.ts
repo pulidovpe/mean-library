@@ -58,30 +58,30 @@ export class BookCreateComponent implements OnInit {
   }
 
   createForm() {
-     this.bookForm = this.fb.group({
-        title: [null, Validators.compose([
-           Validators.required,
-           Validators.minLength(3),
-           Validators.maxLength(50),
-        ])],
-        author: [null, Validators.compose([
-           Validators.required,
-           Validators.minLength(2),
-           Validators.maxLength(30),
-           Validators.pattern(/^[a-zA-Z \t]{6,30}$/)
-        ])],
-        language: [null, Validators.compose([
-           Validators.required,
-        ])],
-        editorial: [null, Validators.compose([
-           Validators.required,
-           Validators.minLength(3),
-           Validators.maxLength(30)
-        ])],
-        state: [null, Validators.compose([
-           Validators.required
-        ])]
-     });
+   this.bookForm = this.fb.group({
+      title: [null, Validators.compose([
+         Validators.required,
+         Validators.minLength(3),
+         Validators.maxLength(50),
+      ])],
+      author: [null, Validators.compose([
+         Validators.required,
+         Validators.minLength(2),
+         Validators.maxLength(30),
+         Validators.pattern(/^[a-zA-Z \t]{6,30}$/)
+      ])],
+      language: [null, Validators.compose([
+         Validators.required,
+      ])],
+      editorial: [null, Validators.compose([
+         Validators.required,
+         Validators.minLength(3),
+         Validators.maxLength(30)
+      ])],
+      state: [null, Validators.compose([
+         Validators.required
+      ])]
+   });
   }
 
   saveBook(form:NgForm) {
@@ -92,16 +92,8 @@ export class BookCreateComponent implements OnInit {
         this.alertify.success('Book created');
       }, (err) => {
         this.handler.handleError(err);
-        //console.log(err);
-      });
-    /*this.http.post('/api/book', this.book)
-      .subscribe(res => {
-        let id = res['_id'];
-        this.router.navigate(['/book-details', id]);
-      }, (err) => {
         console.log(err);
-      }
-    );*/
+      });
   }
 
   ngOnInit() {
