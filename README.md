@@ -10,7 +10,7 @@ identificador, titulo, idioma, nombre editorial y estado. También se debe permi
 se debe guardar la información del libro prestado y el nombre del usuario junto
 con la fecha y días a prestar.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
 
 ## Screenshots / Capturas de Pantalla
 ![enter image description here](https://lh3.googleusercontent.com/dc51qxVBZAhcl2OowTiIv9G3tw6GvTuTMZhxGSrfUy0znlizFCLS9O0YCrpxLGM78YsW9MMgrLiN=s750 "Welcome to Library")
@@ -19,7 +19,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Tech-framework used / Tecnologías Usadas
 - Angular 5.2.0
-  - Angular CLI 1.7.4
+  - Angular CLI 6.1.5
 - Node 8.11.3
   - express 4.16.3
   - mongoose 5.1.7

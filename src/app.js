@@ -4,10 +4,10 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const { mongoose } = require('./config/database');
-const apiIndex = require('./roots/index');
-const apiBook = require('./roots/book');
-const apiUser = require('./roots/user');
-const apiBorrow = require('./roots/borrow');
+const apiIndex = require('./routs/index');
+const apiBook = require('./routs/book');
+const apiUser = require('./routs/user');
+const apiBorrow = require('./routs/borrow');
 
 const app = express();
 
