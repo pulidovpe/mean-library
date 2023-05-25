@@ -52,7 +52,7 @@ npm start
 - [x] Se hizo deploy en heroku.
 - [ ] Completar el front-end
 
-> Se puede ver la app (actualmente en desarrollo) desplegada en [heroku](https://mean-library.herokuapp.com/)
+~~Se puede ver la app (actualmente en desarrollo) desplegada en [heroku](https://mean-library.herokuapp.com/)~~
 
 ## Contribute / Para contribuir
 1. Has un [Fork](https://github.com/pulidovpe/mean-library/fork)
